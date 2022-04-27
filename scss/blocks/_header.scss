@@ -1,0 +1,116 @@
+.site-header {
+
+    &__container {
+        padding: 43px 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__nav {
+        white-space: nowrap;
+    }
+
+    &__nav-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-item + &__nav-item {
+        margin-left: 21px;
+    }
+
+    &__nav-link {
+        padding: 5.5px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.923077px;
+        text-transform: uppercase;
+        color: #83888F;
+        border-bottom: 2px solid transparent;
+
+    }
+
+    &__nav-link:hover {
+        color: black;
+        border-bottom: 2px solid black;
+    }
+
+    &__nav-link:active {
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+    }
+    &__hamburger {
+        border: none;
+        background-color: transparent;
+        display: none;
+        width: 24px;
+        height: 24px;
+        background-image: url("../images/hamburger.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all 0.4s;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .site-header {
+        position: relative;
+
+        &__container {
+            padding: 40px 40px 54px 39px;
+        }
+
+        &__nav {
+            padding: 10px 0;
+            display: none;
+        }
+
+        &__hamburger {
+            display: inline-block;
+        }
+    }
+
+    .site-header--open .site-header__nav {
+        display: block;
+        position: absolute;
+        top: 100%;
+        background-color: #2C343E;
+        width: 100%;
+        left: 0;
+    }
+
+    .site-header--open .site-header__nav-list {
+        flex-direction: column;
+    }
+
+    .site-header--open .site-header__nav-item {
+        margin: 10px;
+    }
+
+    .site-header--open .site-header__nav-link {
+        color: #FEFCF7;
+    }
+
+    .site-header--open .site-header__nav-link:hover {
+        border-bottom: none;
+    }
+
+    .site-header--open .site-header__nav-link:active {
+        border-bottom: 2px solid #FEFCF7;
+    }
+
+    .site-header--open .site-header__hamburger {
+        background-image: url("../images/xmark-solid.svg");
+    }
+}
